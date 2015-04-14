@@ -1,0 +1,66 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package newpackage;
+
+import java.util.Scanner;
+
+
+/**
+ *
+ * @author Igor
+ */
+public class Tabuada {
+
+    private int acertos;
+    
+    public Tabuada() {
+        Scanner entrada = new Scanner(System.in);
+        int resultadoJogador,x,y;
+        
+        for (int i=0;i<10;i++) {
+            x = this.sortearNumeroDoIntervalo(0,9);
+            y = this.sortearNumeroDoIntervalo(0,9);
+            System.out.print(""+x+" X "+y+" = ");
+            
+            resultadoJogador = entrada.nextInt();
+            
+            if (resultadoJogador==(x*y))
+            {
+                acertos++;
+                System.out.println("Correto!");
+            }
+            else
+            {
+                System.out.println("Resposta incorreta. O resultado correto eh "+(x*y));
+            }
+        }
+        Tabuada.resultado(acertos);
+    }
+    
+    
+    public static int sortearNumeroDoIntervalo(int min, int max)
+    {
+        return((int)(Math.random()*(max - min + 1)))+ min;
+    }
+    
+    public static void resultado(int acertos){
+        System.out.print("Voce acertou "+acertos+" de 10 contas. ");
+
+        if (acertos==10)
+            System.out.println("Parabens! Voce eh fera!");
+        if (acertos==9)
+            System.out.println("Excelente!");
+        if(acertos==8)
+            System.out.println("Muito Bom! Continue estudando!");
+        if(acertos==7)
+            System.out.println("Legal, mas voce pode ficar melhor! Estude mais um pouco!");
+        if(acertos<=6)
+            System.out.println("Voce precisa estudar um pouco mais! Nao desanime!");
+
+    }
+
+}
