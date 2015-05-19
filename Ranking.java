@@ -22,19 +22,19 @@ import java.util.logging.Logger;
 
 public class Ranking {
     
-    Ranking(int opcao, int pontuacao)
+    Ranking(int opcao, int pontuacao, String nomeAluno)
     {
         if(opcao==1)
         {
-            Ranking.entradaRanking("rankingTabuada.txt", pontuacao);
+            Ranking.entradaRanking("rankingTabuada.txt", pontuacao,nomeAluno);
         }
         if(opcao==2)
         {
-            Ranking.entradaRanking("rankingOperadores.txt", pontuacao);
+            Ranking.entradaRanking("rankingOperadores.txt", pontuacao,nomeAluno);
         }
         if(opcao==3)
         {
-            Ranking.entradaRanking("rankingComparacao.txt", pontuacao);
+            Ranking.entradaRanking("rankingComparacao.txt", pontuacao,nomeAluno);
         }
         if(opcao==4)
         {
@@ -72,10 +72,9 @@ public class Ranking {
         {}
     }
     
-    public static void entradaRanking(String pathArquivo, int pontuacao)
+    public static void entradaRanking(String pathArquivo, int pontuacao, String nome)
     {
         Scanner ent = new Scanner(System.in);
-        String nome;
         String nomeEntrada;
         int vetorPontuacao[] = new int[12];
         String vetorNomes[] = new String[12];
@@ -87,8 +86,6 @@ public class Ranking {
             BufferedWriter buff = new BufferedWriter(fileW);
             FileReader fileR = new FileReader(pathArquivo);
             BufferedReader buff2 = new BufferedReader(fileR);
-            System.out.println("Insira seu nome: ");
-            nome = ent.nextLine();
             if(nome.length()<3)
                 nome = (nome+"  ");
             nomeEntrada = nome.substring(0, 3);
