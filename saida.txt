@@ -1,0 +1,11 @@
+Data: 18/05/2015 14:50:53
+Nome: Victor
+Jogo: Tabuada
+Acertos: 1
+Erros: 1
+
+Data: 18/05/2015 15:36:26
+Nome: Teste
+Jogo: Operadores
+Acertos: 4
+Erros: 2
